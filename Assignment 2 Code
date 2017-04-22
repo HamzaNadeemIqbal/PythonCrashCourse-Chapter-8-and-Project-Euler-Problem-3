@@ -1,0 +1,120 @@
+#8-3. T-Shirt:
+
+def make_shirt(size,text):
+    print("Size of the shirt is "+str(size)+" and Text Printed is "+text.title())
+make_shirt(5,"hamza")
+print(" \n")
+
+
+#8-4. Large Shirts:
+
+def make_shirt(size="large",text="i love python"):
+    print("Size of the shirt is " + str(size) + " and Text Printed is '" + text.title()+"'")
+make_shirt()
+make_shirt('medium', "message printed")
+print(" \n")
+
+#8-5. Cities:
+
+def describe_city(city,country="Pakistan"):
+    print("City  : "+city.title()+" is in Country : "+country.title())
+describe_city('karachi')
+describe_city('sydney','autralia')
+describe_city('islamabad')
+
+#8-12. Sandwiches:
+
+def sandwich_summary(*sandwiches):
+    print("\nSummary:")
+    for sandwich in sandwiches:
+        print(sandwich)
+
+sandwich_summary("chicken sandwich","kebab sanwich")
+sandwich_summary("burger sanwich","pizza sandwich","salad sandwich")
+sandwich_summary("plain sandwich","fish sandwich","cheese grilled sandwich","bbq sandwich")
+
+print("\n")
+
+#8-13. User Profile:
+def build_profile(firstName, lastName, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    profile = {}
+    profile['first_name'] = firstName
+    profile['last_name'] = lastName
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+user_profile = build_profile('Hamza', 'Nadeem',location='Karachi', age=20, height=6)
+print(user_profile)
+print("\n")
+
+#8-14. Cars:
+def car_info(manufacturer, model, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    profile = {}
+    profile['manufacturer'] = manufacturer
+    profile['model'] = model
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+car_profile = car_info('Honda', 2017, color='red', tow_package=True)
+print(car_profile)
+print("\n")
+
+#8-15. Printing Models:
+#file print_models.py code
+def print_theModels(*models):
+    for model in models:
+        print(model.title())
+
+# current file code
+import print_models as pm
+
+pm.print_theModels('apple','nokia','samsung')
+
+print("\n")
+
+
+#8-16. Imports:
+#file print_models.py code
+def print_theModels(*models):
+    for model in models:
+        print(model.title())
+
+
+# current file code
+import print_models
+print_models.print_theModels("apple","nokia","sony","samsung")
+print("\n")
+
+from print_models import print_theModels
+print_theModels("apple","nokia","sony","samsung")
+print("\n")
+
+from print_models import print_theModels as pm
+pm("apple","nokia","sony","samsung")
+print("\n")
+
+import print_models as pm
+pm.print_theModels("apple","nokia","sony","samsung")
+print("\n")
+
+from print_models import *
+print_theModels("apple","nokia","sony","samsung")
+
+print("\n\n")
+
+# Code ends
+
+
+
+#Project Euler Problem 3
+number = 600851475143
+i = 2
+while i * i < number:
+    while number % i == 0:
+        number = number / i
+    i = i + 1
+print(number)
